@@ -1,21 +1,3 @@
-(function(factory) {
-    if (typeof exports === 'object') {
-        // CommonJS
-        factory(require, exports, module);
-    } else if (typeof define === 'function') {
-        // AMD requirejs
-        define(factory);
-    } else {
-        // Plain script tag
-        var _module = {};
-        _module.exports = {};
-        var _require = function(name) { throw new Error("can't require"); }
-        factory(_require, _module.exports, _module);
-        window.BigInt = _module.exports;
-    }
-})(function (require, exports, module) {
-    "use strict";
-
     var trueRandom = function () { return Math.random(); };
 
     function setRandom(random) {
@@ -1363,68 +1345,6 @@
       copy_(x,sa);
     }
 
-    module.exports = {
-        'add': add,
-        'addInt': addInt,
-        'bigInt2str': bigInt2str,
-        'bitSize': bitSize,
-        'dup': dup,
-        'equals': equals,
-        'equalsInt': equalsInt,
-        'expand': expand,
-        'findPrimes': findPrimes,
-        'GCD': GCD,
-        'greater': greater,
-        'greaterShift': greaterShift,
-        'int2bigInt': int2bigInt,
-        'inverseMod': inverseMod,
-        'inverseModInt': inverseModInt,
-        'isZero': isZero,
-        'millerRabin': millerRabin,
-        'millerRabinInt': millerRabinInt,
-        'mod': mod,
-        'modInt': modInt,
-        'mult': mult,
-        'multMod': multMod,
-        'negative': negative,
-        'powMod': powMod,
-        'randBigInt': randBigInt,
-        'randTruePrime': randTruePrime,
-        'randProbPrime': randProbPrime,
-        'str2bigInt': str2bigInt,
-        'sub': sub,
-        'trim': trim,
-        'addInt_': addInt_,
-        'add_': add_,
-        'copy_': copy_,
-        'copyInt_': copyInt_,
-        'GCD_': GCD_,
-        'inverseMod_': inverseMod_,
-        'mod_': mod_,
-        'mult_': mult_,
-        'multMod_': multMod_,
-        'powMod_': powMod_,
-        'randBigInt_': randBigInt_,
-        'randTruePrime_': randTruePrime_,
-        'sub_': sub_,
-        'addShift_': addShift_,
-        'carry_': carry_,
-        'divide_': divide_,
-        'divInt_': divInt_,
-        'eGCD_': eGCD_,
-        'halve_': halve_,
-        'leftShift_': leftShift_,
-        'linComb_': linComb_,
-        'linCombShift_': linCombShift_,
-        'mont_': mont_,
-        'multInt_': multInt_,
-        'rightShift_': rightShift_,
-        'squareMod_': squareMod_,
-        'subShift_': subShift_,
-    };
-
-});
-
 /**
  * [js-sha256]{@link https://github.com/emn178/js-sha256}
  *
@@ -1433,8 +1353,6 @@
  * @copyright Chen, Yi-Cyuan 2014-2016
  * @license MIT
  */
-(function (root) {
-    'use strict';
   
     var NODE_JS = typeof process == 'object' && process.versions && process.versions.node;
     if (NODE_JS) {
@@ -1652,20 +1570,7 @@
       root.sha256 = sha256;
       root.sha224 = sha224;
     }
-  }(this));
 
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-      // AMD
-      define(['exports'], factory);
-    } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
-      // Node, CommonJS-like
-      factory(module.exports);
-    } else {
-      factory(root);
-    }
-  })(this, function (exports) {
-  
       var srp = function(){
           this.n_base64 = "dadfccb918e5f651d7a1b851efab43f2c17068c69013e37033347e8da75ca8d8370c26c4fbf1a4aaa4afd9b5ab32343749ee4fbf6fa279856fd7c3ade30ecf2b";
           this.g = "2";
@@ -1787,5 +1692,4 @@
       }
   
       exports.srp = srp;
-  });
   
