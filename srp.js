@@ -1,15 +1,3 @@
-(function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
-    // AMD
-    define(['exports'], factory);
-  } else if (typeof exports === 'object' && typeof exports.nodeName !== 'string') {
-    // Node, CommonJS-like
-    factory(module.exports);
-  } else {
-    factory(root);
-  }
-})(this, function (exports) {
-
     var srp = function(){
         this.n_base64 = "dadfccb918e5f651d7a1b851efab43f2c17068c69013e37033347e8da75ca8d8370c26c4fbf1a4aaa4afd9b5ab32343749ee4fbf6fa279856fd7c3ade30ecf2b";
         this.g = "2";
@@ -130,5 +118,4 @@
         return BigInt.bigInt2str(value, base).toLowerCase();
     }
 
-    exports.srp = srp;
-});
+
