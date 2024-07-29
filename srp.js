@@ -932,7 +932,7 @@
         }
       }
       if (s.length==0)
-    s=str[0];
+        s=str[0];
       return s;
     }
 
@@ -1562,14 +1562,6 @@
       return hex;
     };
     
-    if (COMMON_JS) {
-      sha256.sha256 = sha256;
-      sha256.sha224 = sha224;
-      module.exports = sha256;
-    } else if (root) {
-      root.sha256 = sha256;
-      root.sha224 = sha224;
-    }
 
       var srp = function(){
           this.n_base64 = "dadfccb918e5f651d7a1b851efab43f2c17068c69013e37033347e8da75ca8d8370c26c4fbf1a4aaa4afd9b5ab32343749ee4fbf6fa279856fd7c3ade30ecf2b";
@@ -1691,5 +1683,4 @@
           return BigInt.bigInt2str(value, base).toLowerCase();
       }
   
-      exports.srp = srp;
   
